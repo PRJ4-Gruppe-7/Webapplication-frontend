@@ -8,7 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@branu-jp/v-drag": "^0.1.0",
     "core-js": "^3.6.4",
+    "heatmap.js": "^2.0.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
