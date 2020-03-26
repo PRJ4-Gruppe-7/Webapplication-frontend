@@ -37,4 +37,12 @@ export default {
   margin-top: 20%;
 }
 
+
+/* Light Theme */
+
+.light_theme #Rooms li {
+  color: #b1b1b1;
+  background-color: #ebebeb;
+}
+
 </style>

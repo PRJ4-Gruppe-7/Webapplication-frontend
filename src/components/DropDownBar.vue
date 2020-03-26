@@ -1,7 +1,7 @@
 <template>
   <div id="dropBar" @click="click">
     <ul id="dropBarContent">
-      <li id="text">{{items[selectedIndex]}}</li>
+      <li id="text">{{items[selectedIndex].theme_name}}</li>
     </ul>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
       type: Array,
       required: true
     },
-    selectedIndex: {
+    startIndex: {
       type: Number,
       default: 0
     },
@@ -23,7 +23,8 @@ export default {
   data: function () {
     return {
       isOpen: false,
-      dropBarContent: ""
+      dropBarContent: "",
+      selectedIndex: this.startIndex
     }
   },
   methods: {
@@ -36,7 +37,7 @@ export default {
           if (this.selectedIndex != i)
           {
             var list = document.createElement("LI");
-            var textnode = document.createTextNode(item);
+            var textnode = document.createTextNode(item.theme_name);
             list.append(textnode);
             this.dropBarContent.append(list);
           }
@@ -45,20 +46,28 @@ export default {
         this.isOpen = true;
 
       } else {
-
-        this.close(event.toElement.innerHTML);
+        var inner = event.toElement.innerHTML
+        this.items.forEach((item) => {
+          if (item.theme_name == inner)
+          {
+            this.close(item);
+          }
+        });
       }
     },
     close: function(newSelected) {
       this.selectedIndex = this.items.indexOf(newSelected);
       console.log(this.selectedIndex);
       var list = document.createElement("LI");
-      var textnode = document.createTextNode(newSelected);
+      var textnode = document.createTextNode(newSelected.theme_name);
       list.append(textnode);
       this.dropBarContent.textContent = '';
       this.dropBarContent.append(list);
 
       this.isOpen = false;
+
+      this.$emit('selected-theme', newSelected.css_name);
+
     }
   }
 }
@@ -83,4 +92,13 @@ a{
 #dropBarContent li:hover {
   background-color: #354954;
 }
+
+
+/* Light Theme */
+
+.light_theme #dropBarContent li:hover {
+  color: #bde5f0;
+  background-color: white;
+}
+
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header id="header" v-on:goto-settings="goto_settings"/>
-    <SettingsWindow class="content" id="page2"/>
+    <SettingsWindow class="content" id="page2" v-on:selected-theme="changeTheme"/>
     <HeatmapWindow class="content" id="page1"/>
   </div>
 </template>
@@ -19,6 +19,17 @@ export default {
     SettingsWindow,
     HeatmapWindow,
     Header
+  },
+  data() { return {
+      theme: 'dark_theme'
+  };
+  },
+  mounted() {
+    if (localStorage.stylesheet) {
+      this.theme = localStorage.theme;
+    }
+    this.changeTheme(this.theme);
+
   },
   methods: {
     goto_settings: function() {
@@ -38,6 +49,10 @@ export default {
         page2.style.marginLeft = 100 + "vw";
         page1.style.right = 0;
       }
+    },
+    changeTheme: function(theme) {
+      console.log(theme);
+      document.getElementsByTagName("BODY")[0].className = theme;
     }
   }
 }
@@ -69,7 +84,6 @@ export default {
 }
 
 #header {
-  background-color: blue;
   grid-area: Header;
 }
 
@@ -86,6 +100,13 @@ export default {
 #page2 {
   transition: 1s;
   margin-left: 100vw;
+}
+
+
+/* Light Theme */
+
+.light_theme #app {
+  background-color: white;
 }
 
 

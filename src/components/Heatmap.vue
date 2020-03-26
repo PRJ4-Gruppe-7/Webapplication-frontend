@@ -8,7 +8,8 @@
 <script>
 
 import * as h337 from 'heatmap.js';
-import heatmapdata_json from '../data/heatmapdata.json'
+import heatmapdata_json from '../data/heat.json'
+// import heatmapdata_json from '../data/heatmapdata.json'
 
 export default {
   name: 'Heatmap',
@@ -72,7 +73,7 @@ export default {
       });
 
       var data = {
-        max: 1.1,
+        max: 20.0,
         min: 0,
         data: dataobj
       };

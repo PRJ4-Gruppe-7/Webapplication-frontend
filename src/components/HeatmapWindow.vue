@@ -79,4 +79,20 @@ export default {
 }
 
 
+/* Light Theme */
+
+.light_theme #HeatmapBox {
+  background-color: #ebebeb;
+  -webkit-box-shadow: 10px 10px 11px -1px rgba(57,59,77,0.2);
+  -moz-box-shadow: 10px 10px 11px -1px rgba(57,59,77,0.2);
+  box-shadow: 10px 10px 11px -1px rgba(57,59,77,0.2);
+}
+
+.light_theme #HeatmapViewer {
+  -webkit-box-shadow: inset 2px -2px 39px -4px rgba(0,0,0,0.27);
+  -moz-box-shadow: inset 2px -2px 39px -4px rgba(0,0,0,0.27);
+  box-shadow: inset 2px -2px 39px -4px rgba(0,0,0,0.27);
+}
+
+
 </style>

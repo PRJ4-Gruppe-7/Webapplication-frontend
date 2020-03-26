@@ -29,5 +29,15 @@ export default {
   color: #3282b8;
 }
 
+/* Light Theme */
+
+.light_theme #name_h2 {
+  color: #b1b1b1;
+}
+
+.light_theme #Title_underline {
+  border: 1px solid #b1b1b1;
+}
+
 
 </style>

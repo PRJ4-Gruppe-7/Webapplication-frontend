@@ -1,6 +1,7 @@
 <template>
   <div id="HeatmapViewer" @mouseover="mouseStatus(true)" @mouseleave="mouseStatus(false)">
     <div v-drag style="absolute" id="map">
+
       <Heatmap ref="Heatmapdiv" id="heatmap"/>
       <div id="Topography"/>
     </div>
@@ -82,6 +83,13 @@ export default {
   grid-area: map;
   width: 100%;
   height: 100%;
+}
+
+
+/* Light Theme */
+
+.light_theme #Topography {
+  box-shadow: inset 0px 0px 0px 2px #bde5f0;
 }
 
 
