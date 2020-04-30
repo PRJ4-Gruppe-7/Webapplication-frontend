@@ -1,7 +1,6 @@
 <template>
   <div id="HeatmapViewer" @mouseover="mouseStatus(true)" @mouseleave="mouseStatus(false)">
     <div v-drag style="absolute" id="map">
-
       <Heatmap ref="Heatmapdiv" id="heatmap"/>
       <div id="Topography"/>
     </div>
@@ -10,7 +9,7 @@
 
 <script>
 import drag from '@branu-jp/v-drag'
-import Heatmap from './Heatmap.vue'
+import Heatmap from './HeatmapV2.vue'
 
 export default {
   name: 'HeatmapViewer',
@@ -62,7 +61,7 @@ export default {
 }
 
 #map {
-  clip-path: inset(-5px -4px -2px -2px);
+  /*clip-path: inset(-5px -4px -2px -2px);*/
   display: grid;
   grid-template-areas: "map";
   width: 500px;
@@ -74,7 +73,6 @@ export default {
 
 #Topography {
   grid-area: map;
-  box-shadow: inset 0px 0px 0px 2px #3282b8;
   width: 100%;
   height: 100%;
 }
@@ -86,11 +84,6 @@ export default {
 }
 
 
-/* Light Theme */
-
-.light_theme #Topography {
-  box-shadow: inset 0px 0px 0px 2px #bde5f0;
-}
 
 
 </style>
