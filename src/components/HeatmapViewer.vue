@@ -9,7 +9,7 @@
 
 <script>
 import drag from '@branu-jp/v-drag'
-import Heatmap from './HeatmapV2.vue'
+import Heatmap from './Heatmap.vue'
 
 export default {
   name: 'HeatmapViewer',

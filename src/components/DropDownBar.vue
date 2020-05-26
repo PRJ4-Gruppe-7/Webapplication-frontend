@@ -66,6 +66,7 @@ export default {
 
       this.isOpen = false;
 
+      localStorage.setItem("theme", newSelected.css_name)
       this.$emit('selected-theme', newSelected.css_name);
 
     }

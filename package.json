@@ -13,7 +13,8 @@
     "core-js": "^3.6.4",
     "heatmap.js": "^2.0.5",
     "jquery": "^3.5.0",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-diagrams": "0.0.1-development"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
@@ -22,7 +23,8 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.0"
   },
   "eslintConfig": {
     "root": true,

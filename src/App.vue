@@ -25,10 +25,12 @@ export default {
   };
   },
   mounted() {
-    if (localStorage.stylesheet) {
+    if (localStorage.theme) {
+      console.log(localStorage.theme)
       this.theme = localStorage.theme;
+      this.changeTheme(this.theme);
     }
-    this.changeTheme(this.theme);
+    //this.changeTheme(this.theme);
 
   },
   methods: {
